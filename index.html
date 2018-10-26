@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marriage and Divorce Rates in China</title>
+  <link href="https://fonts.googleapis.com/css?family=Cardo|Montserrat" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/new.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-blue.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
+<body>
+  <div id="main">
+  <header>
+  <h1> Population and Marriage and Divorce in China</h1>
+</header>
+
+<article>
+  <p>By Brittani Campbell</p>
+  <h2>Chinese Population</h2>
+<p>China is one of the most heavily populated countries in East Asia and the world. It is populated with over one billion people. The graph below breaks down the demographic by male and female from the year 2000 to 2012. The trend shows that there are more men than women living in the country. It also shows that the population for both groups have been steadily rising.</p>
+
+<div id="population" style="width:100%; height:400px;"></div>
+<script>
+Highcharts.chart('population', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Population Change in China from 2000-2012'
+    },
+    subtitle: {
+        text: 'Source: data.un.org'
+    },
+    xAxis: {
+        categories: [
+            '2000',
+            '2001',
+            '2002',
+            '2003',
+            '2004',
+            '2005',
+            '2006',
+            '2007',
+            '2008',
+            '2009',
+            '2010',
+            '2011',
+            '2012',
+        ],
+        crosshair: true
+    },
+    yAxis: {
+      min: 6,
+      startOnTick: false,
+      tickInterval: .1,
+        title: {
+            text: 'Number of People x 100 million'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Male',
+        data: [6.54, 6.57, 6.61, 6.67, 6.78, 6.74, 6.77, 6.80, 6.84, 6.86, 6.87, 6.91, 6.92]
+
+    }, {
+        name: 'Female',
+        data: [6.13, 6.20, 6.23, 6.27, 6.30, 6.34, 6.37, 6.41, 6.44, 6.48, 6.53, 6.57, 6.58]
+
+    }],
+});
+</script>
+<p> Source for Population: <a href="http://data.un.org/Data.aspx?q=urban&d=POP&f=tableCode%3a1"> UN Data</a></p>
+
+
+<h2>Marriage and Divorce China</h2>
+<p>Today, research shows that marriages are going down in China. Simultaneously, divorce rates are going down. The chart below, however, shows that marriages were on the rise from 2000 to 2012. Divorce rates were relatively low during this time but started to increase around 2010. There are many societal reasons for why divorce rates started to go up, including women being more educated and China’s controversial one-child policy. </p>
+
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+Highcharts.chart('container', {
+
+title: {
+  text: 'Marriages and Divorces in China from 2000-2012'
+},
+
+subtitle: {
+  text: 'Source: data.un.org'
+},
+xAxis: {
+  title: {
+    text: 'Years'
+  }
+},
+yAxis: {
+  title: {
+    text: 'Number of Registrations'
+  }
+},
+legend: {
+  layout: 'vertical',
+  align: 'right',
+  verticalAlign: 'middle'
+},
+
+plotOptions: {
+  series: {
+    label: {
+      connectorAllowed: false
+    },
+    pointStart: 2000
+  }
+},
+
+series: [{
+  name: 'Divorce',
+  data: [1213000, 1250000, 1177000, 1331000, 1665000, 1785000, 1893000, 2098000, 2270000, 2470000, 2680000, 2111000, 2388000]
+}, {
+  name: 'Marriage',
+  data: [8485000, 8050000, 7862000, 8114000, 8671000, 8231000, 9450000, 9914000, 10980000, 12120000, 12410000, 12471000, 12971000]
+}],
+
+responsive: {
+  rules: [{
+    condition: {
+      maxWidth: 500
+    },
+    chartOptions: {
+      legend: {
+        layout: 'horizontal',
+        align: 'center',
+        verticalAlign: 'bottom'
+      }
+    }
+  }]
+}
+
+});
+</script>
+<p>Source for <a href="http://data.un.org/Data.aspx?q=urban&d=POP&f=tableCode%3a16"> Divorces </a> and <a href="http://data.un.org/Data.aspx?q=urban&d=POP&f=tableCode%3a14"> Marriages </a></p>
+
+</article>
+<footer>
+<p>Data from <a href="http://data.un.org/Default.aspx">UN Data</a>. Website made by Brittani Campbell.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
